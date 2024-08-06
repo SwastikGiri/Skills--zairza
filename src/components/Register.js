@@ -1,12 +1,15 @@
-import React from "react";
+import {React, useState} from "react";
 import { NavLink } from "react-router-dom"
 import {Link} from 'react-scroll'
 import { GoArrowLeft, GoArrowRight } from "react-icons/go"
 import logo from '../assets/images/registerlogo.png'
 import {Domains} from './Domains'
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { FaChevronDown } from "react-icons/fa";
 
 const Register = () => {
     
+    const [passwordVisible, setPasswordVisible] = useState(false);
 
     return(
             <div id="register" className="flex justify-center">
@@ -38,11 +41,19 @@ const Register = () => {
                                 required
                                 ></input>
                             </div>
-                            <div id="register-inputs-div" className="full-length">
-                                <input
-                                type="password"placeholder="Set a password" 
-                                required></input>
+                            <div id="register-inputs-div" className="full-length relative">
+                            <input
+                                type={passwordVisible ? "text" : "password"}
+                                placeholder="Set a password"
+                                required
+                            />
+                            <div 
+                                className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer"
+                                onClick={() => setPasswordVisible(!passwordVisible)}
+                            >
+                                {passwordVisible ? <AiOutlineEye /> : <AiOutlineEyeInvisible />}
                             </div>
+                        </div>
                         </div>
                         <div className="flex justify-between">
                             <div id="register-inputs-div">
@@ -58,70 +69,56 @@ const Register = () => {
                         </div>
                         <div className="flex justify-between">
                             <div id="register-inputs-div">
-                                <input list="branch"
-                                name="branch"
-                                placeholder="Branch" 
-                                required
-                                />
-                                <datalist id="branch">
-                                    <option value="Architecture" />
-                                    <option value="Biotechnology" />
-                                    <option value="Civil Engineering" />
-                                    <option value="CSE" />
-                                    <option value="CSE-AI & ML" />
-                                    <option value="Electrical Engineering" />
-                                    <option value="E&I" />
-                                    <option value="ECE" />
-                                    <option value="IT" />
-                                    <option value="ME" />
-                                    <option value="ME-AI & Robotics" />
-                                    <option value="Textile Engineering" />
-                                    <option value="Planning" />
-                                </datalist>
+                                <select>
+                                    <option value="">Branch</option>
+                                    <option value="1">Architecture</option>
+                                    <option value="2">Biotechnology</option>
+                                    <option value="3">Civil Engineering</option>
+                                    <option value="4">CSE</option>
+                                    <option value="5">CSE - AI & ML</option>
+                                    <option value="6">Electrical Engineering</option>
+                                    <option value="7">E&I</option>
+                                    <option value="8">IT</option>
+                                    <option value="9">Mechanical Engineering</option>
+                                    <option value="10">Mechanical Engineering - AI & Robotics</option>
+                                    <option value="11">Textile Engineering</option>
+                                    <option value="12">Fashion & Apparel Technology</option>
+                                    <option value="13">Planning</option>
+                                    <option value="14">Integrated M.Sc</option>
+                                    <option value="15">M.Tech</option>
+                                </select>
                             </div>
                             <div id="register-inputs-div">
-                                <input list="year"
-                                name="year"
-                                placeholder="Year" 
-                                required
-                                />
-                                <datalist id="year">
-                                    <option value="1st" />
-                                    <option value="2nd" />
-                                    <option value="3rd" />
-                                    <option value="4th" />
-                                </datalist>
+                                <select>
+                                    <option value=''>Year</option>
+                                    <option value='1st'>1st</option>
+                                    <option value='2nd'>2nd</option>
+                                    <option value='3rd'>3rd</option>
+                                    <option value='4th'>4th</option>
+                                </select>
                             </div>
                         </div>
                         <div className="flex justify-between">
                             <div id="register-inputs-div">
-                                <input list="first-domain"
-                                name="first-domain"
-                                placeholder="First Domain" 
-                                required
-                                />
-                                <datalist id="first-domain">
-                                    {
-                                        Domains.map((domain,idx) => (
-                                            <option value={domain.name} key={`Domains-${idx}`} />
+                                <select name="first-domain" required>
+                                    <option value="">First Domain</option>
+                                    {       
+                                        Domains.map((domain, idx) => (
+                                            <option value={domain.name} key={`Domains-${idx}`}>{domain.name}</option>
                                         ))
                                     }
-                                </datalist>
+                                </select>
                             </div>
                             <div id="register-inputs-div">
-                                <input list="second-domain"
-                                name="second-domain"
-                                placeholder="Second Domain" 
-                                required
-                                />
-                                <datalist id="second-domain">
-                                    {
-                                        Domains.map((domain,idx) => (
-                                            <option value={domain.name} key={`Domains-${idx}`} />
+                                <select name="second-domain" required>
+                                <option value="">Second Domain</option>
+                                    {       
+                                        Domains.map((domain, idx) => (
+                                            <option value={domain.name} key={`Domains-${idx}`}>{domain.name}</option>
                                         ))
                                     }
-                                    <option value='none' />
-                                </datalist>
+                                <option value="none">none</option>
+                            </select>
                             </div>
                         </div>
                         <div className="pl-4 pr-4 pt-1 pb-1 text-justify">**At max you can register for 2 domains. In case you want to enrol for only one domain then fill none in the second domain. And write 'N/A' in the Drive Link( for Second Domain ) mentioned below.</div>
@@ -144,8 +141,8 @@ const Register = () => {
                         <div className="pl-4 pr-4 pt-1 pb-1 text-justify">**Create a folder in your google drive and share that link here. This is the place where you will submit your solutions for the given task. So keep this drive safely with you</div>
                     </div>
                     <div className="flex lg:justify-end justify-between gap-4 mt-8">
-                        <NavLink to='/' className="flex items-center h-7 no-underline text-white border-white rounded border pl-4 pr-4 justify-center gap-1" style={{width:'90px',fontSize:'12px',fontWeight:'550'}}><GoArrowLeft/>Back</NavLink>
-                        <NavLink className="flex items-center h-7 bg-white no-underline rounded border pt-1 pb-1 pl-4 pr-4 justify-center gap-1" style={{color:'#303030',border:'#303030',width:'140px',fontSize:'12px',fontWeight:'550'}}>Create Account<GoArrowRight/></NavLink>
+                        <NavLink to='/' className="flex items-center h-9 no-underline text-white border-white rounded border pl-4 pr-4 justify-center gap-1" style={{width:'90px',fontSize:'12px',fontWeight:'550'}}><GoArrowLeft/>Back</NavLink>
+                        <NavLink className="flex items-center h-9 bg-white no-underline rounded border pt-1 pb-1 pl-4 pr-4 justify-center gap-1" style={{color:'#303030',border:'#303030',width:'140px',fontSize:'12px',fontWeight:'550'}}>Create Account<GoArrowRight/></NavLink>
                     </div>
                 </div>
                 <div><img src = {logo} alt='logo' id="registerlogo" /></div>

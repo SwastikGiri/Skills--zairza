@@ -38,7 +38,7 @@ body{
 #rectangle{
   display: flex;
   position: relative;
-  top: -210px;
+  top: -50px;
   justify-content: end;
   align-items: end;
   z-index: -150;
@@ -53,7 +53,7 @@ body{
 
 }
 #section1{
-  margin: 50px 7vw 0;
+  margin: 160px 7vw 0;
   position: relative;
   top: -220px;
   text-align: center;
@@ -149,16 +149,18 @@ body{
   background: #1A1635;
   border-radius: 0 0 20px 20px;
   color: #C8CDDC;
+  text-align: center;
+  display: flex;
+  align-items: center;
 }
 #section5foldercontainer{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 2.5vw;
+  justify-content: center;
 }
 #section5folders{
   width: 185px;
-  padding: 10px;
+  padding: 20px;
 }
 #section5folders img{
   margin: auto;
@@ -234,14 +236,22 @@ body{
 }
 #register{
   padding: 20px 16px 20px 16px;
-  margin:  8vw 0 8vw;
+  margin:  8vw 0vw 0vw;
   font-family: "Inter", sans-serif;
   font-size: 14px;
   color: #C3C1CE;
-  gap:2vw;
+  gap: 8vw;
 }
 #register-inputs-div{
   width: 242px;
+}
+#register-inputs-div select{
+  width: 242px;
+  padding: 12px 16px 12px 16px;
+  height: 42px;
+  background:#1A1635;
+  border-radius: 4px;
+
 }
 #registerlogo{
   position: sticky;
@@ -257,6 +267,9 @@ body{
   #section2{
     margin-top:50px;
   }
+  #register{
+    gap:5vw;
+  }
 }
 @media screen and (min-width: 769px) {
   #section4imgcontainer div img {
@@ -270,7 +283,7 @@ body{
     transform: scale(1.2);
   }
 }
-@media screen and (max-width: 1024px) and (min-width:768px){
+@media screen and (max-width: 1023px) and (min-width:768px){
   #signinlogo,#registerlogo{
     display: none;
   }
