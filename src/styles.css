@@ -270,7 +270,11 @@ body{
     transform: scale(1.2);
   }
 }
-
+@media screen and (max-width: 1024px) and (min-width:768px){
+  #signinlogo,#registerlogo{
+    display: none;
+  }
+}
 @media screen and (max-width: 768px) {
   .nav-links{
     margin-top: 20px;

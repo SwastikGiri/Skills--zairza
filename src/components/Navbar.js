@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import { Link } from "react-scroll";
-import { NavLink } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import img1 from '../assets/images/navbar-logo.png';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   return (
     <nav className="h-15 bg-gray-400 rounded-lg bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 mx-[9vw] my-[3vmax]" id="navbar">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3">
-        <Link to="https://www.zairza.co.in/" className="flex items-center space-x-3 rtl:space-x-reverse cursor-pointer">
+        <NavLink to="/" className="flex items-center space-x-3 rtl:space-x-reverse cursor-pointer">
             <img src={img1} className="h-8" alt="navbarlogo" />
-        </Link>
+        </NavLink>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
             <NavLink to="/register" className="text-black no-underline bg-blue-50 hover:bg-violet-300 font-medium rounded-lg text-sm px-4 py-2 text-center cursor-pointer">Register</NavLink>
 
