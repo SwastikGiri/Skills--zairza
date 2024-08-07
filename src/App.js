@@ -5,12 +5,14 @@ import 'bootstrap/dist/css/bootstrap.css';
 import "./styles.css"
 import SignIn from "./components/SignIn";
 import Register from "./components/Register";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
       <Routes>
         <Route path="/" element={<Layout/>} >
           <Route path="" element={<Home/>} />
+          <Route path="profile" element={<Profile/>} />
         </Route>
         <Route path="register" element={<Register/>} />
         <Route path="signin" element={<SignIn/>} />
