@@ -9,6 +9,7 @@
 body{
   background-color: #000720;
   overflow-x:hidden;
+  user-select: none;
 }
 #sub-heading{
   color: #9A8DEC;
@@ -170,6 +171,10 @@ body{
   font-size: 16px;
   line-height: 20.8px;
 }
+#section6{
+  font-family: "Inter", sans-serif;
+  margin: 60px 7vw 60px;
+}
 #footer{
   min-height: 108px;
   background: #9A8DEC;
@@ -199,7 +204,6 @@ body{
   font-family: "Inter", sans-serif;
   font-size: 14px;
   color: #C3C1CE;
-  gap:2vw;
 }
 #signintext{
   width: 500px;
@@ -236,22 +240,20 @@ body{
 }
 #register{
   padding: 20px 16px 20px 16px;
-  margin:  8vw 0vw 0vw;
+  margin:  4vw 0vw 0vw;
   font-family: "Inter", sans-serif;
   font-size: 14px;
   color: #C3C1CE;
-  gap: 8vw;
 }
 #register-inputs-div{
   width: 242px;
 }
 #register-inputs-div select{
-  width: 242px;
+  width: 100%;
   padding: 12px 16px 12px 16px;
   height: 42px;
   background:#1A1635;
   border-radius: 4px;
-
 }
 #registerlogo{
   position: sticky;
@@ -260,15 +262,23 @@ body{
   width:409.52px;
 }
 
+@media screen and (max-width:2560px) and (min-width:1440px) {
+  #register,#signin{
+    gap: 6vw;
+  }
+}
+@media screen and (max-width:1440px) and (min-width:1024px) {
+  #register,#signin{
+    gap: 8vw;
+  }
+}
+
 @media screen and (max-width:1024px){
   #rectangle{
-    top: -180px;
+    top: -80px;
   }
   #section2{
     margin-top:50px;
-  }
-  #register{
-    gap:5vw;
   }
 }
 @media screen and (min-width: 769px) {
@@ -319,6 +329,11 @@ body{
   }
 }
 @media screen and (max-width:480px){
+  #rectangle{
+    width: 70%;
+    margin-left: auto;
+    top: -50px;
+  }
   #section2{
     margin-top: -60px;
   }
@@ -360,6 +375,10 @@ body{
   #register-inputs-div{
     width: 167px;
   }
+  #register-inputs-div select{
+    height: auto;
+    width: 100%;
+  }
   .full-length{
     min-width: 350px;
   }
@@ -368,6 +387,9 @@ body{
   }
 }
 @media screen and (max-width:420px){
+  #rectangle{
+    width: 75%;
+  }
   #section2{
     margin-top: -120px;
   }
@@ -376,6 +398,9 @@ body{
   }
   #register-inputs-div{
     width: 150px;
+  }
+  #register-inputs-div select{
+    width: 100%;
   }
   .registertext{
     max-width: 320px;
@@ -388,6 +413,9 @@ body{
   }
 }
 @media screen and (max-width:375px) {
+  #rectangle{
+    width: 80%;
+  }
   .registertext{
     max-width: 300px;
   }

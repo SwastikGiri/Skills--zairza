@@ -1,10 +1,8 @@
 import { Router,Routes, Route } from "react-router-dom";
 import Layout from './components/Layout'
 import Home from "./pages/Home";
-import Navbar from "./components/Navbar";
 import 'bootstrap/dist/css/bootstrap.css';
 import "./styles.css"
-import Footer from "./components/Footer";
 import SignIn from "./components/SignIn";
 import Register from "./components/Register";
 

@@ -25,11 +25,11 @@ const SignIn = () => {
                         <div>
                             <input type="email" placeholder="E - mail" required></input>
                         </div>
-                        <div id="forgotpassworddiv" className="text-right"><Link to='#' className="cursor-help" style={{color:'#9A8DEC'}}>Forgot Password ?</Link></div>
-                        <div className="text-right text-white font-semibold" id="help">Kindly visit Zairza</div>
                         <div>
                             <input type="password" placeholder="Password" required></input>
                         </div>
+                        <div id="forgotpassworddiv" className="text-right"><Link to='#' className="cursor-help" style={{color:'#9A8DEC'}}>Forgot Password ?</Link></div>
+                        <div className="text-right text-white font-semibold" id="help">Kindly visit Zairza</div>
                     </div>
                     <div className="flex lg:justify-end justify-between gap-4 mt-8">
                         <Link to='/' className="flex items-center h-7 no-underline text-white border-white rounded border pl-4 pr-4 justify-center gap-1" style={{width:'90px',fontSize:'12px',fontWeight:'550'}}><GoArrowLeft/>Back</Link>

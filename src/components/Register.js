@@ -1,11 +1,9 @@
 import {React, useState} from "react";
 import { NavLink } from "react-router-dom"
-import {Link} from 'react-scroll'
 import { GoArrowLeft, GoArrowRight } from "react-icons/go"
 import logo from '../assets/images/registerlogo.png'
 import {Domains} from './Domains'
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import { FaChevronDown } from "react-icons/fa";
 
 const Register = () => {
     
@@ -141,8 +139,8 @@ const Register = () => {
                         <div className="pl-4 pr-4 pt-1 pb-1 text-justify">**Create a folder in your google drive and share that link here. This is the place where you will submit your solutions for the given task. So keep this drive safely with you</div>
                     </div>
                     <div className="flex lg:justify-end justify-between gap-4 mt-8">
-                        <NavLink to='/' className="flex items-center h-9 no-underline text-white border-white rounded border pl-4 pr-4 justify-center gap-1" style={{width:'90px',fontSize:'12px',fontWeight:'550'}}><GoArrowLeft/>Back</NavLink>
-                        <NavLink className="flex items-center h-9 bg-white no-underline rounded border pt-1 pb-1 pl-4 pr-4 justify-center gap-1" style={{color:'#303030',border:'#303030',width:'140px',fontSize:'12px',fontWeight:'550'}}>Create Account<GoArrowRight/></NavLink>
+                        <NavLink to='/' className="flex items-center h-8 no-underline text-white border-white rounded border pl-4 pr-4 justify-center gap-1" style={{width:'90px',fontSize:'12px',fontWeight:'550'}}><GoArrowLeft/>Back</NavLink>
+                        <NavLink className="flex items-center h-8 bg-white no-underline rounded border pt-1 pb-1 pl-4 pr-4 justify-center gap-1" style={{color:'#303030',border:'#303030',width:'145px',fontSize:'12px',fontWeight:'550'}}>Create Account<GoArrowRight/></NavLink>
                     </div>
                 </div>
                 <div><img src = {logo} alt='logo' id="registerlogo" /></div>
