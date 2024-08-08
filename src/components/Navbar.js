@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import img1 from '../assets/images/navbar-logo.png';
-import { BiLogOut } from "react-icons/bi";
+import { GrMenu } from "react-icons/gr";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,18 +40,27 @@ const Navbar = () => {
                 <img src={img1} className="h-8" alt="navbarlogo" />
           </NavLink>
           <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-              {/* Conditional rendering of Register and Logout buttons */}
               {!location.pathname.includes('/profile') && (
                 <NavLink to="/register" className="text-black no-underline bg-blue-50 hover:bg-violet-300 font-medium rounded-lg text-sm px-4 py-2 text-center cursor-pointer">Register</NavLink>
               )}
 
               {location.pathname.includes('/profile') && (
-                <button onClick={handleLogout} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-4 flex items-center">
-                  Logout <BiLogOut className="text-lg" />
+                <button onClick={handleLogout} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-4">
+                  Logout
                 </button>
               )}
           </div>
-      
+          <button 
+             onClick={() => setIsMenuOpen(!isMenuOpen)} 
+            type="button" 
+            className="inline-flex items-center p-2 w-12 h-12 justify-center text-6xl text-white rounded-lg md:hidden" 
+            aria-controls="navbar-cta" 
+            aria-expanded={isMenuOpen}
+          >
+            <span className="sr-only">Open main menu</span>
+            <GrMenu />
+          </button>
+          
           <div className={`items-center justify-between ${isMenuOpen ? 'flex' : 'hidden'} w-full md:flex md:w-auto md:order-1`} id="navbar-cta">
             <ul className="flex flex-col font-semibold text-lg md:p-0 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0">
               <li>
