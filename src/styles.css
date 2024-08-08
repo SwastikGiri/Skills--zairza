@@ -277,12 +277,15 @@ body{
 }
 #profile{
   margin: auto;
-  padding-top: 160px;
+  padding-top: 120px;
   padding-bottom: 50px;
   font-family: "Inter", sans-serif;
   font-size: 14px;
   color: #C3C1CE;
   justify-content: center;
+}
+#domaincards{
+  width: 259px;
 }
 @media screen and (max-width:2560px) and (min-width:1440px) {
   #register,#signin{
@@ -352,6 +355,7 @@ body{
   }
   #profileheading{
     text-align: center;
+    padding:0px 16px 10px 16px;
   }
   #profiletext{
     display: flex;

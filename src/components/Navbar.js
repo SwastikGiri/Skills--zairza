@@ -19,7 +19,7 @@ const Navbar = () => {
     };
 
     window.addEventListener("resize", handleResize);
-    handleResize(); // Initial setup
+    handleResize();
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
