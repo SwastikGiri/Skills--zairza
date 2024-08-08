@@ -3,6 +3,7 @@ import { Link } from "react-scroll";
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import img1 from '../assets/images/navbar-logo.png';
 import { GrMenu } from "react-icons/gr";
+import { BiLogOut } from "react-icons/bi";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -45,8 +46,8 @@ const Navbar = () => {
               )}
 
               {location.pathname.includes('/profile') && (
-                <button onClick={handleLogout} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-4">
-                  Logout
+                <button onClick={handleLogout} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-4 flex items-center gap-1">
+                  Logout <BiLogOut className="text-lg"/>
                 </button>
               )}
           </div>
