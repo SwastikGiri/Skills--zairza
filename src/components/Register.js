@@ -8,6 +8,16 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 const Register = () => {
     
     const [passwordVisible, setPasswordVisible] = useState(false);
+    const [selectedFirstDomain, setSelectedFirstDomain] = useState("");
+    const [selectedSecondDomain, setSelectedSecondDomain] = useState("");
+
+    const handleFirstDomainChange = (event) => {
+        const selectedDomainName = event.target.value;
+        setSelectedFirstDomain(selectedDomainName);
+        if (selectedSecondDomain === selectedDomainName) {
+            setSelectedSecondDomain(""); 
+        }
+    };
 
     return(
             <div id="register" className="flex justify-center">
@@ -98,7 +108,7 @@ const Register = () => {
                         </div>
                         <div className="flex justify-between">
                             <div id="register-inputs-div">
-                                <select name="first-domain" required>
+                                <select name="first-domain" required onChange={handleFirstDomainChange}>
                                     <option value="">First Domain</option>
                                     {       
                                         Domains.map((domain, idx) => (
@@ -108,11 +118,11 @@ const Register = () => {
                                 </select>
                             </div>
                             <div id="register-inputs-div">
-                                <select name="second-domain" required>
+                                <select name="second-domain" required onChange={(e) => setSelectedSecondDomain(e.target.value)}>
                                 <option value="">Second Domain</option>
                                     {       
-                                        Domains.map((domain, idx) => (
-                                            <option value={domain.name} key={`Domains-${idx}`}>{domain.name}</option>
+                                        Domains.filter(domain => domain.name !== selectedFirstDomain).map((domain, idx) => (
+                                            <option value={domain.name} key={`AvailableDomains-${idx}`}>{domain.name}</option>
                                         ))
                                     }
                                 <option value="none">none</option>
